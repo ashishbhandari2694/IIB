@@ -1,0 +1,16 @@
+
+
+CREATE COMPUTE MODULE Eval_MF_Compute
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+		
+		DECLARE Operation CHARACTER InputRoot.JSON.Data.root.MathsOperation ;
+		DECLARE Num1 INTEGER InputRoot.JSON.Data.root.Num1;
+		DECLARE Numb2 INTEGER InputRoot.JSON.Data.root.Numb2;
+		SET OutputRoot.JSON.Data.root.Result =  EVAL('Num1' ||Operation|| 'Numb2');
+		
+	 RETURN TRUE;
+	END;
+
+
+END MODULE;
